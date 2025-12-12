@@ -19,8 +19,8 @@ venv/
 Thumbs.db
 
 # ----- Input/output CSV files -----
-source.csv      # Your input CSV
-results.csv     # Generated output CSV
+source.csv
+results.csv
 
 # ----- Logs -----
 *.log
