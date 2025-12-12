@@ -1,0 +1,30 @@
+# ----- Python cache files -----
+__pycache__/
+*.py[cod]
+*$py.class
+
+# ----- Virtual environment -----
+env/
+venv/
+.venv/
+
+# ----- IDE/editor settings -----
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# ----- OS generated files -----
+.DS_Store
+Thumbs.db
+
+# ----- Input/output CSV files -----
+source.csv      # Your input CSV
+results.csv     # Generated output CSV
+
+# ----- Logs -----
+*.log
+
+# ----- Optional: databases or temporary files -----
+*.sqlite3
+*.db
