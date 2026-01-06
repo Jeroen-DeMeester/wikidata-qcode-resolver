@@ -47,7 +47,10 @@ def get_qcodes_from_external_uris(property_id: str, batch_size: int = 50, pause_
 
             try:
                 # Execute the SPARQL query via HTTP GET
-                resp = requests.get(endpoint, params={"query": query, "format": "json"})
+                headers = {
+                    "User-Agent": "wikidata-qcode-resolver/1.0 (j.de.meester@rijksmuseum.nl)"
+                }
+                resp = requests.get(endpoint, params={"query": query, "format": "json"}, headers=headers)
                 resp.raise_for_status()
                 data = resp.json()
             except Exception as e:
@@ -87,7 +90,7 @@ if __name__ == "__main__":
         '-p', '--property',
         type=str,
         default="P650",  # Default is RKD Artists.
-        help='Wikidata property ID (P245 for ULAN, P650 for RKD artists, P1871 for cerl).'
+        help='Wikidata property ID (P245 for ULAN, P650 for RKD artists, P1871 for cerl, P1566 for geonames, P1667 for tgn).'
         # For other codes, run: python3 wikidata-qcode-resolver.py -p P1871
     )
 
